@@ -10,6 +10,8 @@ namespace Services
     public interface IClientsService
     {
         List<Clients> GetAllClients();
+        Clients GetClientById(string Id);
+
     }
     
 }

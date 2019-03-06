@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class ClientsServices
+    public class ClientsServices : IClientsService
     {
         public ClientRepository _clientRepository => new ClientRepository();
         /// <summary>
