@@ -72,6 +72,7 @@
     <Compile Include="User.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Database.edmx">
