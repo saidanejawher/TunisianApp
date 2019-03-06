@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Web.Mvc;
 using Services;
 using Services.Interface;
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(TunisianApp.App_Start.SimpleInjectorInitializer), "Initialize")]
 
 namespace TunisianApp.App_Start
 {
@@ -39,7 +40,7 @@ namespace TunisianApp.App_Start
           
             };
 
-            container.Collection.Register<IUserService>(concreteTypes);
+            //container.Collection.Register<IUserService>(concreteTypes);
         }
     }
 }

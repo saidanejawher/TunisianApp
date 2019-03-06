@@ -11,9 +11,14 @@ namespace TunisianApp.Controllers
     public class HomeController : Controller
     {
         private readonly IClientsService _clientServices;
+        public HomeController(IClientsService clientServices)
+        {
+            _clientServices = clientServices;
+        }
+       
         public ActionResult Index()
         {
-            //ListClientsModel Clients = _clientServices.GetAllClients();
+            List<Repository.Clients> Clients = _clientServices.GetAllClients();
             //return View("Test", Clients);
             return View();
 
