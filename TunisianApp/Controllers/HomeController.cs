@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using Newtonsoft.Json;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,27 @@ namespace TunisianApp.Controllers
             return View();
 
         }
-
+        public ViewResult ListClients()
+        {
+            List<Repository.Clients> Clients = _clientServices.GetAllClients();
+            List<ClientModel> ListClientsViewModel = new List<ClientModel>();
+            foreach (var c in Clients)
+            {
+                ListClientsViewModel.Add(new ClientModel
+                {
+                    Id = c.Id,
+                    Age = c.age,
+                    Nom = c.Nom,
+                    Prenom = c.Prenom
+                });
+            }
+            return View(ListClientsViewModel);
+        }
+        public JsonResult ListClientsJson()
+        {
+            List<Repository.Clients> Clients = _clientServices.GetAllClients();
+            return Json(Clients);
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

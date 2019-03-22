@@ -1,0 +1,35 @@
+﻿@model List<TunisianApp.Models.ClientModel>
+@{
+    ViewBag.Title = "List Clients";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table id="tableClients" class="customsingletableinput display dataTable no-footer align-left">
+    <thead>
+        <tr>
+
+            <th style="width: 30px" class="fw-600 t-color-717c85">
+            </th>
+           
+            <th style="width: 30px" class="fw-600 t-color-717c85">
+            </th>
+        </tr>
+    </thead>
+    @{ foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nom</td>
+           
+                <td>@item.Prenom</td>
+           
+                <td>@item.Age</td>
+            </tr>
+        }
+    }
+
+</table>
+
+@section scripts
+{
+    <script src="~/Scripts/Views/Clients.js"></script>
+}
+

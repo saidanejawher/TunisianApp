@@ -181,6 +181,35 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Datatable\css\dataTables.bootstrap.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.bootstrap4.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.foundation.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.foundation.min.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.jqueryui.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.jqueryui.min.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.semanticui.css" />
+    <Content Include="Scripts\Datatable\css\dataTables.semanticui.min.css" />
+    <Content Include="Scripts\Datatable\css\jquery.dataTables.css" />
+    <Content Include="Scripts\Datatable\css\jquery.dataTables.min.css" />
+    <Content Include="Scripts\Datatable\images\sort_asc.png" />
+    <Content Include="Scripts\Datatable\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\Datatable\images\sort_both.png" />
+    <Content Include="Scripts\Datatable\images\sort_desc.png" />
+    <Content Include="Scripts\Datatable\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\Datatable\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.foundation.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\Datatable\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\Datatable\js\jquery.dataTables.js" />
+    <Content Include="Scripts\Datatable\js\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -191,6 +220,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Views\Clients.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -206,9 +236,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\ListClients.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
