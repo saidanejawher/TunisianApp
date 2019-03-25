@@ -19,27 +19,9 @@ namespace TunisianApp.Controllers
        
         public ActionResult Index()
         {
-            List<Repository.Clients> Clients = _clientServices.GetAllClients();
-            //return View("Test", Clients);
             return View();
-
         }
-        public ViewResult ListClients()
-        {
-            List<Repository.Clients> Clients = _clientServices.GetAllClients();
-            List<ClientModel> ListClientsViewModel = new List<ClientModel>();
-            foreach (var c in Clients)
-            {
-                ListClientsViewModel.Add(new ClientModel
-                {
-                    Id = c.Id,
-                    Age = c.age,
-                    Nom = c.Nom,
-                    Prenom = c.Prenom
-                });
-            }
-            return View(ListClientsViewModel);
-        }
+       
         public JsonResult ListClientsJson()
         {
             List<Repository.Clients> Clients = _clientServices.GetAllClients();

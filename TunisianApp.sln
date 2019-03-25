@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{9ADB393E-6656-4661-98B6-1B6FFD383CF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsService", "WindowsService", "{3056CBDE-E3B1-403C-A108-A488AD4422DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Upsideo.Finaveo2.WindowsService.CheckDocumentsCTMS", "WindowsService.CheckDocumentsCTMS\Upsideo.Finaveo2.WindowsService.CheckDocumentsCTMS.csproj", "{D9542808-5158-41BD-A3EC-0AD20F2DFC91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{9ADB393E-6656-4661-98B6-1B6FFD383CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ADB393E-6656-4661-98B6-1B6FFD383CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ADB393E-6656-4661-98B6-1B6FFD383CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9542808-5158-41BD-A3EC-0AD20F2DFC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9542808-5158-41BD-A3EC-0AD20F2DFC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9542808-5158-41BD-A3EC-0AD20F2DFC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9542808-5158-41BD-A3EC-0AD20F2DFC91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9542808-5158-41BD-A3EC-0AD20F2DFC91} = {3056CBDE-E3B1-403C-A108-A488AD4422DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77E9CC9E-8B7C-49CE-9531-2A6D1B8A2064}

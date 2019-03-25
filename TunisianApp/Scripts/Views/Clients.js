@@ -11,107 +11,99 @@
         /***********************
         * Prospect : Initialize DataTables into Prospect Table
         **********************/
-        //var initializeClientsTable = function () {
+      
+        //var tabletableClients = function () {
         //    $("table#tableClients").DataTable({
-        //        "processing": "true",
-        //        "language": {
-        //            "emptyTable": "Aucune donnée disponible",
-        //            "info": "Affichage de _START_ à _END_ de _TOTAL_ entrées",
-        //            "infoEmpty": "Affichage de 0 à 0 des 0 entrées",
-        //            "infoFiltered": "(filtrées de _MAX_ entrées en total)",
-        //            "infoPostFix": "",
-        //            "thousands": ",",
-        //            "lengthMenu": "Afficher _MENU_ entrées",
-        //            "loadingRecords": "Chargement...",
-        //            "processing": "Traitement...",
-        //            "search": "Rechercher:",
-        //            "zeroRecords": "Aucun résultat trouvé",
-        //            "paginate": {
-        //                "first": "Premier",
-        //                "last": "Dernier",
-        //                "next": "Suivant",
-        //                "previous": "Précédent"
-        //            },
-        //            "aria": {
-        //                "sortAscending": ": Activer le tri ascendant de la colonne",
-        //                "sortDescending": ": Activer le tri descendant de la colonne"
+        //        "ajax": {
+        //            "url": $("#approot").val() + "Home/ListClientsJson",
+        //            "type": "GET",
+        //            "data": function (d) {
+        //                //d.idOdc = window.$("#idOuvertureCompte").val();
+        //                //d.idTiers = window.$("#IdTiers").val();
         //            }
         //        },
-        //        "order": [[2, "asc"]],
-        //        "paging": true,
-        //        "ordering": true,
-        //        "searching": true,
-        //        "info": true,
+        //        "processing": true,
+        //        "autoWidth": false,
+        //        "language": {
+        //            "emptyTable": "Aucun document disponible",
+        //            "info": "",
+        //            "infoEmpty": "",
+        //            "loadingRecords": " Chargement...",
+        //            "processing": "  Traitement..."//,
+        //        },
+        //        "paging": false,
+        //        "ordering": false,
+        //        "searching": false,
+        //        "ColumnDefs": [
+        //            { "width": "926px", "bSortable": false, className: "text-center" },
+        //            { "width": "137px", "bSortable": false, className: "text-center" }
+        //        ],
+        //        "aaSorting": [],
+        //        "columns": [
+
+        //            {
+        //                orderable: false,
+        //                render: function (data, type, row, meta) {
+        //                    row.Nom;
+        //                }
+        //            },
+        //            {
+        //                "className": "text-center",
+        //                "data": "DocTitle",
+        //                "render": function (data, type, row) {
+        //                    //data = row.StatutOcr;
+
+
+        //                    return row.Prenom;
+        //                }
+        //            },
+        //            {
+        //                "className": "text-center",
+        //                orderable: false,
+        //                render: function (data, type, row, meta) {
+        //                    return row.Age;
+        //                }
+        //            },
+
+        //        ],
+
+        //        "fnDrawCallback": function () {
+        //            $(".infoTooltip").tooltip({
+        //                content: function () {
+        //                    return $(this).prop("title");
+        //                }
+        //            });
+        //            setTimeout(function () { $('table#tableClients').css('width', '100%'); }, 30);
+        //            var table = $("table#tableClients").DataTable();
+        //        }
         //    });
-        //};
-        var tabletableClients = function () {
-            $("table#tableClients").DataTable({
-                "ajax": {
-                    "url": $("#approot").val() + "Home/ListClientsJson",
-                    "type": "GET",
-                    "data": function (d) {
-                        //d.idOdc = window.$("#idOuvertureCompte").val();
-                        //d.idTiers = window.$("#IdTiers").val();
-                    }
-                },
-                "processing": true,
-                "autoWidth": false,
-                "language": {
-                    "emptyTable": "Aucun document disponible",
-                    "info": "",
-                    "infoEmpty": "",
-                    "loadingRecords": " Chargement...",
-                    "processing": "  Traitement..."//,
-                },
-                "paging": false,
-                "ordering": false,
-                "searching": false,
-                "ColumnDefs": [
-                    { "width": "926px", "bSortable": false, className: "text-center" },
-                    { "width": "137px", "bSortable": false, className: "text-center" }
-                ],
-                "aaSorting": [],
-                "columns": [
-
-                    {
-                        orderable: false,
-                        render: function (data, type, row, meta) {
-                            row.Nom;
-                        }
-                    },
-                    {
-                        "className": "text-center",
-                        "data": "DocTitle",
-                        "render": function (data, type, row) {
-                            //data = row.StatutOcr;
-
-
-                            return row.Prenom;
-                        }
-                    },
-                    {
-                        "className": "text-center",
-                        orderable: false,
-                        render: function (data, type, row, meta) {
-                            return row.Age;
-                        }
-                    },
-
-                ],
-
-                "fnDrawCallback": function () {
-                    $(".infoTooltip").tooltip({
-                        content: function () {
-                            return $(this).prop("title");
-                        }
-                    });
-                    setTimeout(function () { $('table#tableClients').css('width', '100%'); }, 30);
-                    var table = $("table#tableClients").DataTable();
-                }
-            });
-        }
+        //}
         //---------
-      
+        var EditClient = function () {
+            $("#EditCient").on("click",
+                function (e) {
+                    e.preventDefault();
+                    var $form = $(this).closest("form");
+                    var data = $form.serialize();
+                    
+                        $.post($form.attr("action"),
+                            data,
+                            function (data, status) {
+                                if (data.success === false) {
+                                    toastr.error('Erreur lors de la création du client.');
+                                }
+                                else if (data.success === true) {
+                                    $("[id^=modalEdit]").modal('hide');
+                                    toastr.success('Client modifié avec succès !');
+                                    setTimeout(function () {
+                                        location.reload();
+                                    },
+                                        500);
+                                }
+                            });
+                  
+                });
+        }
         /***********************
         * ProspectClass : Initialize the class
         **********************/
@@ -119,13 +111,13 @@
 
             initializeEvent();
             //initializeClientsTable();
-            tabletableClients();
-          
+            //tabletableClients();
+            EditClient();
         };
     }
     // ===================
-    var Clients = new Clients();
-    Clients.initializeClientsClass();
+    var Client = new Clients();
+    Client.initializeClientsClass();
 });
 
 
